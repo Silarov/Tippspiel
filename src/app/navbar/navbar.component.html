@@ -1,1 +1,54 @@
-<p>navbar works!</p>
+<nav class="bg-red-600 sticky top-0 z-50">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" (click)="toggleMobileMenu()">
+          <span class="sr-only">Open main menu</span>
+          <div class="space-y-1" [class.open]="isMobileMenuOpen">
+            <span class="block h-1 w-6 bg-current transition-transform duration-300 ease-in-out"></span>
+            <span class="block h-1 w-6 bg-current transition-transform duration-300 ease-in-out"></span>
+            <span class="block h-1 w-6 bg-current transition-transform duration-300 ease-in-out"></span>
+          </div>
+        </button>
+      </div>
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <div class="title"><button><h1 class="text-white text-2xl">Tippspiel</h1></button></div>
+        </div>
+      </div>
+      <div class="hidden sm:block sm:ml-6">
+        <div class="flex space-x-4">
+          <button  class="rounded-md bg-white px-3 py-2 text-sm font-medium text-red-700" aria-current="page">Home</button>
+          <button  class="rounded-md bg-white px-3 py-2 text-sm font-medium text-red-700" aria-current="page">Create Group</button>
+          <button  class="rounded-md bg-white px-3 py-2 text-sm font-medium text-red-700" aria-current="page">Join Group</button>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <!-- Profile dropdown -->
+        <div class="relative ml-3">
+          <div>
+            <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true" (click)="toggleMenu()">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="https://probst-severin.ch/img/images/portrait/0.webp" alt="profile picture">
+            </button>
+          </div>
+          <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" [class.hidden]="!isDropdownOpen">
+            <button class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">My Account</button>
+            <button class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-3">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:hidden" id="mobile-menu" [class.hidden]="!isMobileMenuOpen">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      <button class="block rounded-md bg-white px-3 py-2 text-base font-medium text-red-700" aria-current="page">Home</button>
+      <button class="block rounded-md bg-white px-3 py-2 text-base font-medium text-red-700" aria-current="page">Create Group</button>
+      <button class="block rounded-md bg-white px-3 py-2 text-base font-medium text-red-700" aria-current="page">Join Group</button>
+    </div>
+  </div>
+</nav>

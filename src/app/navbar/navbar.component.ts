@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -9,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  isDropdownOpen = false;
+  isMobileMenuOpen = false;
+
+  toggleMenu() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }
