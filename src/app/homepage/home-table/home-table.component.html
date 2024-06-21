@@ -1,1 +1,58 @@
-<p>home-table works!</p>
+<div class="flex items-center justify-center p-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  <div class="body-container">
+    <div class="flex justify-between mb-4">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search..."
+        class="border p-2 rounded"
+      />
+      <button routerLink="/group/new" class="bg-gray-700 text-white p-2 rounded hover:bg-red-600">New Group</button>
+    </div>
+
+    <table class="w-full max-w-4xl bg-white shadow-md my-5 border-collapse">
+      <thead class="bg-gray-100">
+      <tr>
+        <th class="px-4 py-3 text-left border-b border-gray-300 flex cursor-pointer" (click)="sort('name')">
+          <p>Name</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+            <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+          </svg>
+        </th>
+        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer" (click)="sort('rank')">Rank</th>
+        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer" (click)="sort('points')">Points</th>
+        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (group of sortedGroups; track  group) {
+          <tr class="hover:bg-gray-100">
+            <td class="px-4 py-3 border-b border-gray-300">{{ group.name }}</td>
+            <td class="px-4 py-3 border-b border-gray-300">{{ group.rank }}</td>
+            <td class="px-4 py-3 border-b border-gray-300">{{ group.points }}</td>
+            <td class="px-4 py-3 border-b border-gray-300 relative">
+              <button class="p-2 border bg-gray-700 text-white hover:bg-red-600" (click)="toggleGroupMenu(group.name)">
+                <p>Settings</p>
+              </button>
+              @if(openGroupMenu === group.name) {
+                <div class="absolute z-30 right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5">
+                  @if(isAdmin()) {
+                    <button routerLink="/group/edit/{{group.group_guid}}" class="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100" (click)="showDetails(group)">Edit</button>
+                  } @else {
+                    <button routerLink="/group/view/{{group.group_guid}}" class="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100" (click)="showDetails(group)">Show Details</button>
+                  }
+                  <button class="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100" (click)="tipNow(group)">Tip Now</button>
+                  <button class="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100" (click)="leaveGroup(group)">Leave Group</button>
+                  @if(isAdmin()) {
+                    <button class="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100" (click)="deleteGroup(group)">Delete Group</button>
+                  }
+                </div>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button routerLink="/group/new" class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-red-600">Create new</button>
+  </div>
+</div>

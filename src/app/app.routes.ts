@@ -22,6 +22,7 @@ export const routes: Routes = [
 
   { path: 'group/new', component: GroupDetailComponent, data: {type: 'new'}}, //has to be logged in
   { path: 'group/edit/:guid', component: GroupDetailComponent, data: {type: 'edit'}}, //has to be logged in
+  { path: 'group/view/:guid', component: GroupDetailComponent, data: {type: 'view'}}, //has to be logged in
 
   { path: 'tipping-page', component: TippingPageComponent }, //has to be logged in
 
