@@ -13,14 +13,30 @@
     <table class="w-full max-w-4xl bg-white shadow-md my-5 border-collapse">
       <thead class="bg-gray-100">
       <tr>
-        <th class="px-4 py-3 text-left border-b border-gray-300 flex cursor-pointer" (click)="sort('name')">
+        <th class="px-4 py-3 text-left border-b border-gray-300 flex items-center cursor-pointer" (click)="sort('name')">
           <p>Name</p>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
-            <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
+          @if(sortColumn === 'name' && sortDirection === 'asc') {
+            <span>&#9650;</span>
+          } @else if (sortColumn === 'name' && sortDirection === 'desc') {
+            <span>&#9660;</span>
+          }
         </th>
-        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer" (click)="sort('rank')">Rank</th>
-        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer" (click)="sort('points')">Points</th>
+        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer" (click)="sort('rank')">
+          <p>Rank</p>
+          @if(sortColumn === 'rank' && sortDirection === 'asc') {
+            <span>&#9650;</span>
+          } @else if (sortColumn === 'rank' && sortDirection === 'desc') {
+            <span>&#9660;</span>
+          }
+        </th>
+        <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer" (click)="sort('points')">
+          <p>Points</p>
+          @if(sortColumn === 'points' && sortDirection === 'asc') {
+            <span>&#9650;</span>
+          } @else if (sortColumn === 'points' && sortDirection === 'desc') {
+            <span>&#9660;</span>
+          }
+        </th>
         <th class="px-4 py-3 text-left border-b border-gray-300 cursor-pointer">Actions</th>
       </tr>
       </thead>
@@ -32,7 +48,7 @@
             <td class="px-4 py-3 border-b border-gray-300">{{ group.points }}</td>
             <td class="px-4 py-3 border-b border-gray-300 relative">
               <button class="p-2 border bg-gray-700 text-white hover:bg-red-600" (click)="toggleGroupMenu(group.name)">
-                <p>Settings</p>
+                Settings
               </button>
               @if(openGroupMenu === group.name) {
                 <div class="absolute z-30 right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5">

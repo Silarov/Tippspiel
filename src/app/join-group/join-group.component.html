@@ -1,1 +1,101 @@
-<p>join-group works!</p>
+<h1 class="text-2xl font-bold mb-4">Create Group</h1>
+  <form>
+    <!-- Name of Group -->
+    <div class="mb-4">
+      <label for="groupName" class="block text-gray-700 font-medium">Name of Group</label>
+      <input
+        type="text"
+        id="groupName"
+        class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/2"
+      />
+    </div>
+
+    <!-- Short Description -->
+    <div class="mb-4">
+      <label for="groupDescription" class="block text-gray-700 font-medium">Short Description</label>
+      <input
+        type="text"
+        id="groupDescription"
+        class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/2"
+      />
+    </div>
+
+    <!-- List Players -->
+    <div class="mb-4">
+      <label class="inline-flex items-center">
+        <input type="checkbox" class="form-checkbox" />
+        <span class="ml-2">Limit Player</span>
+      </label>
+      <div class="mt-2">
+        <label for="maxPlayers" class="block text-gray-700 font-medium">Maximum Amount of Players</label>
+        <input
+          type="number"
+          id="maxPlayers"
+          class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/4"
+          placeholder="20"
+        />
+      </div>
+    </div>
+
+    <!-- On What to Do -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium">On what to tip</label>
+      <div class="mt-2">
+        <label class="inline-flex items-center">
+          <input type="checkbox" class="form-checkbox" />
+          <span class="ml-2">Qualifying</span>
+        </label>
+        <div>
+          <label class="inline-flex items-center mt-2">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Race</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center mt-2">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Sprint Qualifying</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center mt-2">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Sprint Race</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <app-tables></app-tables>
+
+    <!-- Allow Groups -->
+    <div class="mb-4">
+      <label class="inline-flex items-center">
+        <input type="checkbox" class="form-checkbox"  />
+        <span class="ml-2">Allow Groups</span>
+      </label>
+      <div class="mt-2">
+        <label for="groupSize" class="block text-gray-700 font-medium">Size of Groups</label>
+        <input
+          type="number"
+          id="groupSize"
+          class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/4"
+          placeholder="5"
+        />
+      </div>
+    </div>
+
+    <!-- Points Reduction -->
+    <div class="mb-4">
+      <label class="inline-flex items-center">
+        <input type="checkbox" class="form-checkbox"  />
+        <span class="ml-2">Points Reduction if not Equal</span>
+      </label>
+    </div>
+
+    <!-- Delete Group Button -->
+    <button type="button" class="px-4 py-2 bg-gray-700 text-white rounded-md">Save</button>
+    <div class="mb-4">
+      <button routerLink="/home" type="button" class="px-4 py-2 bg-red-500 text-white rounded-md">Cancel</button>
+    </div>
+  </form>

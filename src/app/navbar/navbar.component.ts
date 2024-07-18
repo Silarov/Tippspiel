@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Component, inject} from '@angular/core';
+import {NavigationEnd, RouterLink} from "@angular/router";
+import {AppComponent} from "../app.component";
+import {filter} from "rxjs";
+import {Router} from "express";
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,7 +13,8 @@ import {RouterLink} from "@angular/router";
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-
+  appComponent = inject(AppComponent);
+  title: string = this.appComponent.title;
   isDropdownOpen = false;
   isMobileMenuOpen = false;
 

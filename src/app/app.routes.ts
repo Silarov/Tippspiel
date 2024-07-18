@@ -9,6 +9,8 @@ import {GroupDetailComponent} from "./group-detail/group-detail.component";
 import {ProtectedComponent} from "./errors/protected/protected.component";
 import {AccountInformationComponent} from "./account-information/account-information.component";
 import {TippingDetailComponent} from "./tipping-page/tipping-detail/tipping-detail.component";
+import {JoinGroupComponent} from "./join-group/join-group.component";
+import {ImpressumComponent} from "./misc/impressum/impressum.component";
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -24,6 +26,8 @@ export const routes: Routes = [
   { path: 'group/edit/:guid', component: GroupDetailComponent, data: {type: 'edit'}}, //has to be logged in
   { path: 'group/view/:guid', component: GroupDetailComponent, data: {type: 'view'}}, //has to be logged in
 
+  { path: 'group/join', component: JoinGroupComponent }, //has to be logged in
+
   { path: 'tipping-page', component: TippingPageComponent }, //has to be logged in
 
   { path: 'account', component: AccountInformationComponent }, //has to be logged in
@@ -31,9 +35,10 @@ export const routes: Routes = [
   { path: 'tip-detail/new', component: TippingDetailComponent, data: {type: 'new'}}, //has to be logged in
   { path: 'tip-detail/edit/:guid', component: TippingDetailComponent, data: {type: 'edit'}}, //has to be logged in
 
+  { path: 'impressum', component: ImpressumComponent }, //has to be logged in
+
   { path: 'protected', component: ProtectedComponent },
 
-
-    { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent },
   ];
 

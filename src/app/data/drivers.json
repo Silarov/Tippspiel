@@ -1,0 +1,22 @@
+[
+  { "name": "Max Verstappen", "number": 1, "country": "Netherlands", "team": "Red Bull Racing", "wins": 47, "podiums": 89 },
+  { "name": "Sergio Perez", "number": 11, "country": "Mexico", "team": "Red Bull Racing", "wins": 5, "podiums": 30 },
+  { "name": "Lewis Hamilton", "number": 44, "country": "UK", "team": "Mercedes-AMG Petronas Formula One Team", "wins": 103, "podiums": 191 },
+  { "name": "George Russell", "number": 63, "country": "UK", "team": "Mercedes-AMG Petronas Formula One Team", "wins": 1, "podiums": 10 },
+  { "name": "Charles Leclerc", "number": 16, "country": "Monaco", "team": "Scuderia Ferrari", "wins": 5, "podiums": 27 },
+  { "name": "Carlos Sainz", "number": 55, "country": "Spain", "team": "Scuderia Ferrari", "wins": 1, "podiums": 16 },
+  { "name": "Lando Norris", "number": 4, "country": "UK", "team": "McLaren F1 Team", "wins": 0, "podiums": 11 },
+  { "name": "Oscar Piastri", "number": 81, "country": "Australia", "team": "McLaren F1 Team", "wins": 0, "podiums": 1 },
+  { "name": "Fernando Alonso", "number": 14, "country": "Spain", "team": "Alpine F1 Team", "wins": 32, "podiums": 101 },
+  { "name": "Lance Stroll", "number": 18, "country": "Canada", "team": "Aston Martin Cognizant Formula One Team", "wins": 0, "podiums": 3 },
+  { "name": "Esteban Ocon", "number": 31, "country": "France", "team": "Aston Martin Cognizant Formula One Team", "wins": 1, "podiums": 3 },
+  { "name": "Pierre Gasly", "number": 10, "country": "France", "team": "Scuderia AlphaTauri Honda", "wins": 1, "podiums": 3 },
+  { "name": "Valtteri Bottas", "number": 77, "country": "Finland", "team": "Alfa Romeo Racing Orlen", "wins": 10, "podiums": 67 },
+  { "name": "Zhou Guanyu", "number": 24, "country": "China", "team": "Alfa Romeo Racing Orlen", "wins": 0, "podiums": 0 },
+  { "name": "Kevin Magnussen", "number": 20, "country": "Denmark", "team": "Haas F1 Team", "wins": 0, "podiums": 1 },
+  { "name": "Nico Hulkenberg", "number": 27, "country": "Germany", "team": "Haas F1 Team", "wins": 0, "podiums": 0 },
+  { "name": "Yuki Tsunoda", "number": 22, "country": "Japan", "team": "Scuderia AlphaTauri Honda", "wins": 0, "podiums": 0 },
+  { "name": "Daniel Ricciardo", "number": 3, "country": "Australia", "team": "McLaren F1 Team", "wins": 8, "podiums": 32 },
+  { "name": "Logan Sargeant", "number": 2, "country": "USA", "team": "Williams Racing", "wins": 0, "podiums": 0 },
+  { "name": "Alexander Albon", "number": 23, "country": "Thailand", "team": "Williams Racing", "wins": 0, "podiums": 2 }
+]

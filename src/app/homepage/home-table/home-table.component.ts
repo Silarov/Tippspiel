@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {FormsModule} from "@angular/forms";
-import {GroupTable} from "../../data/group-table.dto";
-import {RouterLink} from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { GroupTable } from "../../data/group-table.dto";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-home-table',
@@ -11,13 +11,14 @@ import {RouterLink} from "@angular/router";
     RouterLink
   ],
   templateUrl: './home-table.component.html',
-  styleUrl: './home-table.component.scss'
+  styleUrls: ['./home-table.component.scss']
 })
 export class HomeTableComponent {
   groups: GroupTable[] = [
-    {group_guid: 'satelkj', name: 'Group A', rank: 1, points: 100},
-    {group_guid: 'asdfasdf', name: 'Group B', rank: 2, points: 90},
-    {group_guid: 'öaofje', name: 'Group C', rank: 3, points: 80},
+    { group_guid: 'satelkj', name: 'Group A', rank: 1, points: 100 },
+    { group_guid: 'asdfasdf', name: 'Group B', rank: 2, points: 90 },
+    { group_guid: 'öaofje', name: 'Group C', rank: 3, points: 80 },
+    { group_guid: 'aöoweijrfasd', name: 'Group D', rank: 1, points: 80 },
   ];
 
   searchQuery: string = '';
@@ -82,7 +83,7 @@ export class HomeTableComponent {
   }
 
   deleteGroup(group: GroupTable) {
-    console.log(group.name)
+    console.log(group.name);
     // Implement delete group functionality
   }
 
