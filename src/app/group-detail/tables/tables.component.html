@@ -16,17 +16,5 @@
       <th class="px-4 py-3 text-left border-b border-gray-300">Driver</th>
     </tr>
     </thead>
-    <tbody>
-      @for (let i = 0; i < 20; i++) {
-        <tr>
-          <td class="px-4 py-3 border-b border-gray-300">{{ i + 1 }}</td>
-          <td class="px-4 py-3 border-b border-gray-300">
-            <select class="border p-2 rounded w-full" [(ngModel)]="selectedDrivers[i]?.name" (ngModelChange)="onSelectDriver(i, $event)">
-              <option *ngFor="let driver of drivers" [value]="driver.name" [disabled]="isDriverSelected(driver)">{{ driver.name }}</option>
-            </select>
-          </td>
-        </tr>
-      }
-    </tbody>
   </table>
 </div>
