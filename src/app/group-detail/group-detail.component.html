@@ -1,2 +1,218 @@
-<h1 class="form-title">{{ type }} Group</h1>
-<app-tables></app-tables>
+<div class="p-6 bg-white shadow-md rounded-md max-w-screen-lg mx-auto">
+  <h1 class="text-2xl font-bold mb-4">Create Group</h1>
+  <form>
+    <!-- Name of Group -->
+    <div class="mb-4">
+      <label for="groupName" class="block text-gray-700 font-medium">Name of Group</label>
+      <input
+        type="text"
+        id="groupName"
+        class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/2"
+      />
+    </div>
+
+    <!-- Short Description -->
+    <div class="mb-4">
+      <label for="groupDescription" class="block text-gray-700 font-medium">Short Description</label>
+      <input
+        type="text"
+        id="groupDescription"
+        class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/2"
+      />
+    </div>
+
+    <!-- List Players -->
+    <div class="mb-4">
+      <label class="inline-flex items-center">
+        <input type="checkbox" class="form-checkbox" />
+        <span class="ml-2">Limit Player</span>
+      </label>
+      <div class="mt-2">
+        <label for="maxPlayers" class="block text-gray-700 font-medium">Maximum Amount of Players</label>
+        <input
+          type="number"
+          id="maxPlayers"
+          class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/4"
+          value="20"
+        />
+      </div>
+    </div>
+
+    <!-- On What to Do -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium">On what to tip</label>
+      <div class="mt-2">
+        <label class="inline-flex items-center">
+          <input type="checkbox" class="form-checkbox" />
+          <span class="ml-2">Qualifying</span>
+        </label>
+        <div class="ml-6">
+          <label class="inline-flex items-center">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Q1</span>
+          </label>
+          <label class="inline-flex items-center ml-4">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Q2</span>
+          </label>
+          <label class="inline-flex items-center ml-4">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Q3</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center mt-2">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Race</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center mt-2">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Sprint Qualifying</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center mt-2">
+            <input type="checkbox" class="form-checkbox" />
+            <span class="ml-2">Sprint Race</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Allow Groups -->
+    <div class="mb-4">
+      <label class="inline-flex items-center">
+        <input type="checkbox" class="form-checkbox"  />
+        <span class="ml-2">Allow Groups</span>
+      </label>
+      <div class="mt-2">
+        <label for="groupSize" class="block text-gray-700 font-medium">Size of Groups</label>
+        <input
+          type="number"
+          id="groupSize"
+          class="mt-1 p-2 border border-gray-300 rounded-md w-full sm:w-1/4"
+          value="5"
+        />
+      </div>
+    </div>
+
+    <!-- Change Default Points -->
+    <div class="mb-4">
+      <label class="inline-flex items-center">
+        <input type="checkbox" class="form-checkbox"  />
+        <span class="ml-2">Change Default Points</span>
+      </label>
+      <div class="mt-2">
+        <div class="">
+          <!-- Qualifying Points Table -->
+          <div class="col-span-2 flex-row">
+            <h2 class="font-medium text-gray-700">Qualifying</h2>
+            <div class="grid grid-cols-2 gap-4 mt-2">
+              @for(i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+              <label class="block text-gray-700">#{{i}}</label>
+              <input
+                type="number"
+                class="mt-1 p-2 border border-gray-300 rounded-md"
+                value="0"
+              />
+              }
+              @for(i of [11,12,13,14,15,16,17,18,19,20]; track i) {
+              <label class="block text-gray-700">#{{i}}</label>
+              <input
+                type="number"
+                class="mt-1 p-2 border border-gray-300 rounded-md"
+                value="0"
+              />
+              }
+        </div>
+      </div>
+
+      <!-- Race Points Table -->
+      <div>
+        <h2 class="font-medium text-gray-700">Race</h2>
+        <div class="grid grid-cols-2 gap-4 mt-2">
+          @for(i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+          <label class="block text-gray-700">#{{i}}</label>
+          <input
+            type="number"
+            class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            value="0"
+          />
+          }
+          @for(i of [11,12,13,14,15,16,17,18,19,20]; track i) {
+          <label class="block text-gray-700">#{{i}}</label>
+          <input
+            type="number"
+            class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            value="0"
+          />
+          }
+    </div>
+</div>
+
+<!-- Sprint Qualifying Points Table -->
+<div>
+  <h2 class="font-medium text-gray-700">Sprint Qualifying</h2>
+  <div class="grid grid-cols-2 gap-4 mt-2">
+    @for(i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+    <label class="block text-gray-700">#{{i}}</label>
+    <input
+      type="number"
+      class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+      value="0"
+    />
+    }
+    @for(i of [11,12,13,14,15,16,17,18,19,20]; track i) {
+    <label class="block text-gray-700">#{{i}}</label>
+    <input
+      type="number"
+      class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+      value="0"
+    />
+    }
+</div>
+</div>
+
+<!-- Sprint Race Points Table -->
+<div>
+  <h2 class="font-medium text-gray-700">Sprint Race</h2>
+  <div class="grid grid-cols-2 gap-4 mt-2">
+    @for(i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+    <label class="block text-gray-700">#{{i}}</label>
+    <input
+      type="number"
+      class="mt-1 p-2 border border-gray-300 rounded-md"
+      value="0"
+    />
+    }
+    @for(i of [11,12,13,14,15,16,17,18,19,20]; track i) {
+  <label class="block text-gray-700">#{{i}}</label>
+  <input
+    type="number"
+    class="mt-1 p-2 border border-gray-300 rounded-md"
+    value="0"
+  />
+    }
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Points Reduction -->
+<div class="mb-4">
+  <label class="inline-flex items-center">
+    <input type="checkbox" class="form-checkbox"  />
+    <span class="ml-2">Points Reduction if not Equal</span>
+  </label>
+</div>
+
+<!-- Delete Group Button -->
+    <button type="button" class="px-4 py-2 bg-gray-700 text-white rounded-md">Save</button>
+<div class="mb-4">
+  <button type="button" class="px-4 py-2 bg-red-500 text-white rounded-md">Cancel</button>
+</div>
+</form>
+</div>
